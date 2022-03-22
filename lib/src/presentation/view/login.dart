@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:true_budget/src/presentation/view/home.dart';
 import 'package:true_budget/src/presentation/view/signup.dart';
 import 'package:true_budget/src/presentation/widget/button/primary_button.dart';
 
@@ -20,7 +21,10 @@ class LoginState extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          const Text("True Budget", style: TextStyle(fontSize: 54),),
+          const Text(
+            "True Budget",
+            style: TextStyle(fontSize: 54),
+          ),
           Form(
               child: Column(
             children: [
@@ -45,7 +49,10 @@ class LoginState extends State<Login> {
             direction: Axis.vertical,
             spacing: 8,
             children: [
-              PrimaryButton(() => {}, "Login"),
+              PrimaryButton(() {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Home()));
+              }, "Login"),
               SecondaryButton(() {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const Signup()));

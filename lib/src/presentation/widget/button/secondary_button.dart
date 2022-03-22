@@ -13,7 +13,7 @@ class SecondaryButton extends StatelessWidget {
         onPressed: _onPressed,
         child: Text(_label, style: const TextStyle(color: Colors.black),),
         style: ElevatedButton.styleFrom(
-          side: BorderSide(color: ThemeData.light().primaryColor),
+          side: BorderSide(color: Theme.of(context).primaryColor),
             elevation: 0,
             minimumSize: const Size(256, 64),
             shape: const RoundedRectangleBorder(
