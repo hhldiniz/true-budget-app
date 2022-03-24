@@ -16,47 +16,51 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
+      body: Stack(
         children: [
-          const Text(
-            "True Budget",
-            style: TextStyle(fontSize: 54),
-          ),
-          Form(
-              child: Column(
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(), label: Text("Username")),
-                  )),
-              const SizedBox(
-                height: 8,
+              const Text(
+                "True Budget",
+                style: TextStyle(fontSize: 54),
               ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(), label: Text("Password")),
+              Form(
+                  child: Column(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(), label: Text("Username")),
+                          )),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(), label: Text("Password")),
+                          )),
+                    ],
                   )),
-            ],
-          )),
-          Wrap(
-            direction: Axis.vertical,
-            spacing: 8,
-            children: [
-              PrimaryButton(() {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Home()));
-              }, "Login"),
-              SecondaryButton(() {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Signup()));
-              }, "Signup")
+              Wrap(
+                direction: Axis.vertical,
+                spacing: 8,
+                children: [
+                  PrimaryButton(() {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const Home()));
+                  }, "Login"),
+                  SecondaryButton(() {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const Signup()));
+                  }, "Signup")
+                ],
+              ),
             ],
           ),
         ],
