@@ -18,7 +18,6 @@ class HomeState extends State<Home> {
         children: const [
           FinancialInformationCard("This was how much you spent this month", 1000),
           FinancialInformationCard("This is your budget for the month", 10000),
-          Card(child: ,)
         ],
       ),
     );
