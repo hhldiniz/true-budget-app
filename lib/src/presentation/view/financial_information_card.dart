@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class FinancialInformationCard extends StatelessWidget {
-
   final String _description;
   final double _value;
 
@@ -14,21 +13,18 @@ class FinancialInformationCard extends StatelessWidget {
       elevation: 8,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8))),
-      child: Align(
-        alignment: Alignment.center,
-        child: Wrap(
-          direction: Axis.horizontal,
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                "\$" + _value.toString(),
-                style: const TextStyle(fontSize: 36),
-              ),
-            ),
-            Text(_description)
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            "\$" + _value.toString(),
+            style: const TextStyle(fontSize: 36),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(_description),
+          )
+        ],
       ),
     );
   }
