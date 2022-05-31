@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:true_budget/src/data/model/card_type.dart';
 import 'package:true_budget/src/data/model/category.dart';
 import 'package:true_budget/src/presentation/controllers/add_info_card_controller.dart';
 import 'package:true_budget/src/presentation/widget/button/primary_button.dart';
@@ -29,45 +28,6 @@ class AddInfoCard extends StatelessWidget {
               ),
               const SizedBox(
                 height: 8,
-              ),
-              Card(
-                elevation: 8,
-                child: Column(
-                  children: [
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Select the type of the card"),
-                    ),
-                    Obx(() {
-                      return RadioListTile<CardType>(
-                        value: CardType.spend,
-                        groupValue:
-                            _addInfoCardController.selectedCardType.value,
-                        onChanged: (cardType) {
-                          if (cardType != null) {
-                            _addInfoCardController.selectedCardType.value =
-                                cardType;
-                          }
-                        },
-                        title: const Text("Spend"),
-                      );
-                    }),
-                    Obx(() {
-                      return RadioListTile<CardType>(
-                        value: CardType.saving,
-                        groupValue:
-                            _addInfoCardController.selectedCardType.value,
-                        onChanged: (cardType) {
-                          if (cardType != null) {
-                            _addInfoCardController.selectedCardType.value =
-                                cardType;
-                          }
-                        },
-                        title: const Text("Saving"),
-                      );
-                    }),
-                  ],
-                ),
               ),
               Row(
                 children: [
